@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { firebase } from "../Firebase/firebase-config";
+import { firebase } from "../firebase/firebase-config";
 import { useDispatch } from "react-redux";
 
 import { JournalScreen } from "../components/journal/JournalScreen";
