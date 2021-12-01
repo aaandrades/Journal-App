@@ -1,4 +1,4 @@
-import { firebase, googleAuthProvider } from "../../Firebase/firebase-config";
+import { firebase, googleAuthProvider } from "../../firebase/firebase-config";
 import { types } from "../Types/types";
 import { disableLoadingAction, enableLoadingAction } from "./uiActions";
 import { cleanNotesAction } from "./notesActions";
