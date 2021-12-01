@@ -1,0 +1,26 @@
+.btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: $white;
+  font-size: 12px;
+  padding: 7px 10px;
+  transition: color 200ms ease-out;
+
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    color: darken($color: $white, $amount: 10);
+    transition: color 200ms ease-in;
+  }
+
+  &:disabled {
+    background-color: $disabled-button;
+    transition: background-color 200ms ease-in;
+  }
+}
+
+.btn-danger {
+  background-color: red;
+}
