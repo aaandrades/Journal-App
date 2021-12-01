@@ -1,5 +1,5 @@
 import swal from "sweetalert";
-import { db } from "../../Firebase/firebase-config";
+import { db } from "../../firebase/firebase-config";
 import { loadNotes } from "../../helpers/loadNotes";
 import { uploadFile } from "../../helpers/uploadFile";
 import { types } from "../Types/types";
