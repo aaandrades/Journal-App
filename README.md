@@ -4,14 +4,31 @@
 ![Build](https://img.shields.io/badge/-Working-brightgreen)
 
 ### :memo: Description
-
-
+Web application to collect and track a personal journal based on Firebase authentication with single-sign-on and email/password. You can create, read, edit, update and delete notes with title, body and images.
 ### :sparkles: Features
-- Working on features
+- Single-sign-on
+- Authentication
+- Register
+- CRUD
+- Images Upload
+- UI Modals
 ### :alembic: Core Concepts
-- Working on Core Concepts
+- Redux pattern
+- BEM Methodology
+- Actions orchestration
+- Firebase
+- Mobile First
+- Login/Register
+- Testing
 ### :construction: Made with
-- Working on technologies
+- React 17.0.2
+- node-sass 6.0.1
+- Firebase 9.4.1
+- React-redux 7.2.6
+- create-react-app scaffolding
+- sweetalert 2.1.2
+- Redux-thunk 2.4.0
+- Jest
 ### :hammer: Demostration
 
 ### :bulb: Run the App
