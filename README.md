@@ -2,6 +2,7 @@
 
 ![aaandrades](https://img.shields.io/badge/-Frontend-orange)
 ![Build](https://img.shields.io/badge/-Working-brightgreen)
+[![Node.js CI](https://github.com/aaandrades/Journal-App/actions/workflows/node.js.yml/badge.svg?branch=test%2Funit-text)](https://github.com/aaandrades/Journal-App/actions/workflows/node.js.yml)
 
 ### :memo: Description
 Web application to collect and track a personal journal based on Firebase authentication with single-sign-on and email/password. You can create, read, edit, update and delete notes with title, body and images.
