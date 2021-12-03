@@ -15,6 +15,7 @@ Web application to collect and track a personal journal based on Firebase authen
 ### :alembic: Core Concepts
 - Redux pattern
 - BEM Methodology
+- Cloudinary
 - Actions orchestration
 - Firebase
 - Mobile First
@@ -25,6 +26,8 @@ Web application to collect and track a personal journal based on Firebase authen
 - node-sass 6.0.1
 - Firebase 9.4.1
 - React-redux 7.2.6
+- Enzyme 3.11
+- Redux-mock-store 1.5.4
 - create-react-app scaffolding
 - sweetalert 2.1.2
 - Redux-thunk 2.4.0

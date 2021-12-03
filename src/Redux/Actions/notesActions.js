@@ -8,14 +8,12 @@ export const createNoteAction = () => {
   return async (dispatch, getState) => {
     try {
       const { uid } = getState().auth;
-      const newNote = {
-        title: "",
-        body: "",
-        date: new Date().getTime(),
-      };
+      const newNote = { title: "", body: "", date: new Date().getTime() };
       const doc = await db.collection(`${uid}/journal/notes`).add(newNote);
+      
       dispatch(activeNoteAction(doc.id, newNote));
       dispatch(setNoteAction({ id: doc.id, ...newNote }));
+
     } catch (error) {
       console.error(error);
       swal("Error creating note", error, "error");
