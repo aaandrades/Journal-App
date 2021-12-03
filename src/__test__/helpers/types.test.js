@@ -1,4 +1,4 @@
-import { types } from "../types";
+import { types } from "../../Redux/Types/types";
 import { typesMock } from "./types.mock";
 
 describe("Types - Helper", () => {

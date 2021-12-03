@@ -1,6 +1,6 @@
 export const uploadFile = async (file) => {
   try {
-    const cloudinaryUrl = `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_API}/image/upload`;
+    const cloudinaryUrl = `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_NAME}/image/upload`;
 
     const formData = new FormData();
     formData.append("upload_preset", "react-journal");
@@ -10,7 +10,7 @@ export const uploadFile = async (file) => {
       const cloudinaryResp = await resp.json();
       return cloudinaryResp.secure_url;
     } else {
-      throw await resp.json();
+      return null;
     }
   } catch (error) {
     console.error(error);
