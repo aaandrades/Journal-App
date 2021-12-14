@@ -21,8 +21,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test:coverage": "npm run test -- --coverage .",
+    "test:watch": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
+    "test:coverage": "npm run test -- --watchAll=false --coverage .",
+    "test:leaks": "react-scripts test --detectOpenHandles",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
