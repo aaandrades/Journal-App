@@ -7,7 +7,8 @@ import { LoginState } from "../../states/InitialStates";
 
 export const LoginScreen = () => {
   const dispatch = useDispatch();
-  const { loading } = useSelector(state => state.ui)
+  const { loading } = useSelector(state => state.ui);
+  
   const [values, handleInputChange] = useForm(LoginState);
   const { email, password } = values;
   
