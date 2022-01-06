@@ -1,12 +1,12 @@
 export const RegisterState = {
-  name: "Andres Andrade",
-  email: "aaandrades@outlook.com",
-  password: "123123",
-  password2: "123123",
+  name: "",
+  email: "",
+  password: "",
+  password2: "",
 };
 
 export const LoginState = {
-  email: "aaandrades@outlook.com",
+  email: "aaandrades@mail.com",
   password: "123123",
 };
 
