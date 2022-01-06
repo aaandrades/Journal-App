@@ -2,13 +2,22 @@
 
 exports[`RegisterScreen - Component should match to snapshot 1`] = `
 <div
-  className="animate__animated animate__fadeIn animate__faster"
+  className="animate__animated animate__fadeIn animate__faster register-container login-container"
 >
-  <h3
-    className="mb-5"
+  <div
+    className="login-container__header"
   >
-    Register
-  </h3>
+    <h3
+      className="login-container__header__title"
+    >
+      Register
+    </h3>
+    <label
+      className="login-container__header__subheader"
+    >
+      Create a free acount to use the app!
+    </label>
+  </div>
   <form
     onSubmit={[Function]}
     type="submit"
@@ -16,43 +25,81 @@ exports[`RegisterScreen - Component should match to snapshot 1`] = `
     <div
       className="headers"
     >
-      <input
-        autoComplete="new-password"
-        className="input-container"
-        name="name"
-        onChange={[Function]}
-        placeholder="Name"
-        type="text"
-        value="Andres Andrade"
-      />
-      <input
-        autoComplete="new-password"
-        className="input-container"
-        name="email"
-        onChange={[Function]}
-        placeholder="Email"
-        type="email"
-        value="aaandrades@outlook.com"
-      />
-      <input
-        autoComplete="off"
-        className="input-container"
-        name="password"
-        onChange={[Function]}
-        placeholder="Password"
-        type="password"
-        value="123123"
-      />
-      <input
-        className="input-container"
-        name="password2"
-        onChange={[Function]}
-        placeholder="Confirm password"
-        type="password"
-        value="123123"
-      />
+      <div
+        className="textfield-container"
+      >
+        <label>
+          Name
+          <b>
+             *
+          </b>
+        </label>
+        <input
+          autoComplete="new-password"
+          className="input-container"
+          name="name"
+          onChange={[Function]}
+          placeholder="Andrés Andrade"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="textfield-container"
+      >
+        <label>
+          Email
+          <b>
+             *
+          </b>
+        </label>
+        <input
+          autoComplete="new-password"
+          className="input-container"
+          name="email"
+          onChange={[Function]}
+          placeholder="aaandrades@mail.com"
+          type="email"
+          value=""
+        />
+      </div>
+      <div
+        className="textfield-container"
+      >
+        <label>
+          Password
+          <b>
+             *
+          </b>
+        </label>
+        <input
+          autoComplete="off"
+          className="input-container"
+          name="password"
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+      </div>
+      <div
+        className="textfield-container"
+      >
+        <label>
+          Confirm password
+          <b>
+             *
+          </b>
+        </label>
+        <input
+          className="input-container"
+          name="password2"
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+      </div>
       <button
-        className="button pointer"
+        className="auth-btn pointer"
         onClick={[Function]}
         type="submit"
       >
@@ -62,17 +109,20 @@ exports[`RegisterScreen - Component should match to snapshot 1`] = `
     <div
       className="footers"
     >
-      <span
+      <label
         className="paragraph"
       >
+        <span>
+          Already registered ?
+        </span>
         <a
           className="link"
           href="/auth/login"
           onClick={[Function]}
         >
-          Already registered?
+          Sign in
         </a>
-      </span>
+      </label>
     </div>
   </form>
 </div>

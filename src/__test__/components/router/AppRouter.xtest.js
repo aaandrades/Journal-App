@@ -18,6 +18,8 @@ jest.mock("../../../Redux/Actions/authActions", () => ({
   loginAction: jest.fn(),
 }));
 
+jest.mock("lottie-web");
+
 const initialStore = {
   auth: {},
   ui: { loading: false, msgError: null },
@@ -28,14 +30,13 @@ const mockStore = configureStore(middlewares);
 
 let store = mockStore(initialStore);
 
-xdescribe("AppRouter - Router", () => {
-  test("should dispatch login if the user is login", async () => {
+describe.skip("AppRouter - Router", () => {
+  xtest("should dispatch login if the user is login", async () => {
     await act(async () => {
       const userCred = await firebase
         .auth()
         .signInWithEmailAndPassword("test@testing.com", "123456");
 
-      console.log(userCred);
       const wrapper = mount(
         <Provider store={store}>
           <MemoryRouter>

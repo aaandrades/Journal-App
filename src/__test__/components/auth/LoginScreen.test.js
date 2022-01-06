@@ -51,7 +51,7 @@ describe("LoginScreen - Component", () => {
   });
 
   test("should dispath login action with google", () => {
-    wrapper.find(".google-btn").prop("onClick")();
+    wrapper.find(".auth-google").prop("onClick")();
     expect(startGoogleLoginAction).toHaveBeenCalled();
   });
 
