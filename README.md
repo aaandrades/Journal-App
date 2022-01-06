@@ -19,6 +19,7 @@ Web application to collect and track a personal journal based on Firebase authen
 - Cloudinary
 - Actions orchestration
 - Firebase
+- Lottie
 - Mobile First
 - Login/Register
 - Testing
@@ -32,6 +33,7 @@ Web application to collect and track a personal journal based on Firebase authen
 - create-react-app scaffolding
 - sweetalert 2.1.2
 - Redux-thunk 2.4.0
+- React-lottie
 - Jest
 ### :hammer: Demostration
 
