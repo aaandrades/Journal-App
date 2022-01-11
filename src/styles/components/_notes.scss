@@ -1,15 +1,26 @@
+.notes__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary;
+}
+
 .notes__main-content {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  background-color: $white;
+  height: 95%;
+  width: 95%;
+  border-radius: 10px;
 }
 
 .notes__appbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: $primary;
-  color: $white;
+  background-color: $white;
+  color: $primary;
+  border-radius: 10px;
   padding: 10px 20px;
 }
 
@@ -35,16 +46,18 @@
 }
 
 .notes__textarea {
-  border: none;
+  border: 1px dotted $dark-grey;
+  padding: 20px;
   color: $dark-grey;
-  font-size: 20px;
+  font-size: 1.1rem;
   flex: 1 1 auto;
   resize: none;
+  margin: 20px 0px;
   border-radius: 8px;
 }
 
 .notes__image {
-  box-shadow: 5px 5px $dark-grey;
+  box-shadow: 3px 3px 8px 0px #b5b5b5;
   height: 150px;
   width: fit-content;
   width: -moz-fit-content;

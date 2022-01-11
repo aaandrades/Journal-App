@@ -2,7 +2,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "../../Hooks/useForm";
-import { startDeletingAction, updateNoteAction } from "../../Redux/Actions/notesActions";
+import { updateNoteAction } from "../../Redux/Actions/notesActions";
+import { FabButtons } from "./fab-buttons/FabButtons";
 import { NotesAppBar } from "./NotesAppBar";
 
 export const NoteScreen = () => {
@@ -14,10 +15,6 @@ export const NoteScreen = () => {
   useEffect(() => {
     dispatch(updateNoteAction(values));
   }, [values, dispatch]);
-
-  const handleDelete = () => {
-    dispatch(startDeletingAction(note.id));
-  };
 
   return (
     <div className="notes__main-content animate__animated animate__fadeIn">
@@ -37,16 +34,14 @@ export const NoteScreen = () => {
           value={body}
           name="body"
           onChange={handleInputChange}
-        ></textarea>
+        />
         {note.url && (
           <div className="notes__image">
             <img src={note.url} alt="attach-img" height="150" />
           </div>
         )}
       </div>
-      <button className="btn btn-danger" onClick={() => handleDelete()}>
-        Delete
-      </button>
+      <FabButtons note={note} />
     </div>
   );
 };
