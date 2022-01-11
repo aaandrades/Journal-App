@@ -10,10 +10,9 @@ export const createNoteAction = () => {
       const { uid } = getState().auth;
       const newNote = { title: "", body: "", date: new Date().getTime() };
       const doc = await db.collection(`${uid}/journal/notes`).add(newNote);
-      
+
       dispatch(activeNoteAction(doc.id, newNote));
       dispatch(setNoteAction({ id: doc.id, ...newNote }));
-
     } catch (error) {
       console.error(error);
       swal("Error creating note", error, "error");
@@ -70,6 +69,10 @@ export const refreshNotes = (id, note) => ({
     id,
     note: { id, ...note },
   },
+});
+
+export const closeNoteAction = () => ({
+  type: types.emptyNote,
 });
 
 export const startUploading = (file) => {
