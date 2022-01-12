@@ -5,6 +5,9 @@ import {
   startSaveNoteAction,
   startUploading,
 } from "../../../Redux/Actions/notesActions";
+import SaveIcon from "../../../assets/images/diskette.png";
+import DeleteIcon from "../../../assets/images/delete.png";
+import UploadIcon from "../../../assets/images/upload.png";
 
 export const FabButtons = ({ note }) => {
   const dispatch = useDispatch();
@@ -29,22 +32,35 @@ export const FabButtons = ({ note }) => {
   };
 
   return (
-    <div>
-      <button className="btn" onClick={() => handleSubmit()}>
-        Save
-      </button>
+    <div className="fab-button">
+      <div className="fab-container">
+        <button className="fab-button__btn" onClick={() => handleSubmit()}>
+          <img src={SaveIcon} alt="Save" width={30} height={30} />
+        </button>
+        <span className="fab-button__text">Save</span>
+      </div>
+      <div className="fab-container">
+        <button className="fab-button__btn" onClick={() => enableUpload()}>
+          <img src={UploadIcon} alt="Save" width={35} />
+        </button>
+        <span className="fab-button__text">Upload</span>
+      </div>
+      <div className="fab-container">
+        <button
+          className="fab-button__btn delete-btn"
+          onClick={() => handleDelete()}
+        >
+          <img src={DeleteIcon} alt="Save" width={50} />
+        </button>
+        <span className="fab-button__text">Delete</span>
+      </div>
       <input
         type="file"
         onChange={(e) => handleUpload(e)}
         id="fileSelector"
         name="file"
+        className="file-upload"
       />
-      <button className="btn btn-danger" onClick={() => handleDelete()}>
-        Delete
-      </button>
-      <button className="btn " onClick={() => enableUpload()}>
-        Upload
-      </button>
     </div>
   );
 };

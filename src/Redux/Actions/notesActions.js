@@ -3,14 +3,22 @@ import { db } from "../../firebase/firebase-config";
 import { loadNotes } from "../../helpers/loadNotes";
 import { uploadFile } from "../../helpers/uploadFile";
 import { types } from "../Types/types";
+import Loader from "../../assets/loader.gif";
 
 export const createNoteAction = () => {
   return async (dispatch, getState) => {
     try {
+      swal({
+        title: "Creating...",
+        text: "We are creating your entry, please wait",
+        icon: Loader,
+        closeOnClickOutside: false,
+        buttons: false,
+      });
       const { uid } = getState().auth;
       const newNote = { title: "", body: "", date: new Date().getTime() };
       const doc = await db.collection(`${uid}/journal/notes`).add(newNote);
-
+      swal.close();
       dispatch(activeNoteAction(doc.id, newNote));
       dispatch(setNoteAction({ id: doc.id, ...newNote }));
     } catch (error) {
@@ -50,6 +58,13 @@ export const setNoteAction = (note) => ({
 export const startSaveNoteAction = (note) => {
   return async (dispatch, getState) => {
     try {
+      swal({
+        title: "Saving...",
+        text: "We're saving your entry, hold on tight",
+        icon: Loader,
+        closeOnClickOutside: false,
+        buttons: false,
+      });
       const { uid } = getState().auth;
       const buildNote = { ...note };
       delete buildNote.id;
@@ -81,7 +96,7 @@ export const startUploading = (file) => {
     swal({
       title: "Uploading...",
       text: "We're uploading your image, hold on tight",
-      icon: "info",
+      icon: Loader,
       closeOnClickOutside: false,
       buttons: false,
     });
@@ -100,7 +115,7 @@ export const startDeletingAction = (id) => {
       swal({
         title: "Deleting...",
         text: "We're deleting your note, hold on tight",
-        icon: "info",
+        icon: Loader,
         closeOnClickOutside: false,
         buttons: false,
       });

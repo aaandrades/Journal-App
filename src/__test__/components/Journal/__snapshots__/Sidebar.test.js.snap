@@ -15,21 +15,27 @@ exports[`Sidebar - Component should match to snapshot 1`] = `
   </div>
   <div
     className="journal__new-entry"
-    onClick={[Function]}
   >
-    <i
-      className="far fa-calendar-plus fa-5x mt-5 pointer"
-    />
-    <p
-      className="mt-5 pointer"
+    <div
+      className="journal__new-entry__add"
+      onClick={[Function]}
     >
-      New entry
-    </p>
+      <i
+        className="far fa-calendar-plus fa-5x mt-5 pointer"
+      />
+      <p
+        className="pointer"
+      >
+        New entry
+      </p>
+    </div>
   </div>
   <div
     className="journal__entries"
   >
-    <h3>
+    <h3
+      className="journal__entries__text"
+    >
       Current Notes
     </h3>
   </div>

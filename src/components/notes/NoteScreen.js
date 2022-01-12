@@ -26,11 +26,13 @@ export const NoteScreen = () => {
           className="notes__title-input"
           value={title}
           name="title"
+          spellCheck="false"
           onChange={handleInputChange}
         />
         <textarea
           placeholder="What happend today?"
           className="notes__textarea"
+          spellCheck="false"
           value={body}
           name="body"
           onChange={handleInputChange}
@@ -40,8 +42,8 @@ export const NoteScreen = () => {
             <img src={note.url} alt="attach-img" height="150" />
           </div>
         )}
+        <FabButtons note={note} />
       </div>
-      <FabButtons note={note} />
     </div>
   );
 };
