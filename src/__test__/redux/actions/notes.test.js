@@ -11,6 +11,14 @@ import {
 } from "../../../Redux/Actions/notesActions";
 import { types } from "../../../Redux/Types/types";
 
+// export mocked function as default module
+jest.mock("sweetalert2", () => ({
+  default: jest.fn(),
+  fire: jest.fn(),
+  swal: jest.fn(),
+  close: jest.fn(),
+}));
+
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
 
@@ -33,7 +41,6 @@ describe("notes - Actions", () => {
     // fake a promise because Jest version
     await store.dispatch(createNoteAction()).then(() => {});
     const actions = store.getActions();
-
     expect(actions[0]).toEqual({
       type: types.noteActive,
       payload,
@@ -61,7 +68,7 @@ describe("notes - Actions", () => {
 
   test("should update notes, dispatch updateNoteAction", async () => {
     const note = {
-      id: "Gu1SDCmOoisJ8bMcgLUC",
+      id: "0p1uAKRhG2cshJx8euTR",
       title: "titulo",
       body: "body",
     };

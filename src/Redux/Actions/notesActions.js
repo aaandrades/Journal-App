@@ -1,19 +1,19 @@
-import swal from "sweetalert";
+import swal from "sweetalert2";
 import { db } from "../../firebase/firebase-config";
 import { loadNotes } from "../../helpers/loadNotes";
 import { uploadFile } from "../../helpers/uploadFile";
 import { types } from "../Types/types";
-import Loader from "../../assets/loader.gif";
 
 export const createNoteAction = () => {
   return async (dispatch, getState) => {
     try {
-      swal({
+      swal.fire({
         title: "Creating...",
         text: "We are creating your entry, please wait",
-        icon: Loader,
-        closeOnClickOutside: false,
-        buttons: false,
+        icon: "info",
+        allowOutsideClick: false,
+        showCancelButton: false,
+        showConfirmButton: false,
       });
       const { uid } = getState().auth;
       const newNote = { title: "", body: "", date: new Date().getTime() };
@@ -23,7 +23,7 @@ export const createNoteAction = () => {
       dispatch(setNoteAction({ id: doc.id, ...newNote }));
     } catch (error) {
       console.error(error);
-      swal("Error creating note", error, "error");
+      swal.fire("Error creating note", error, "error");
     }
   };
 };
@@ -58,22 +58,23 @@ export const setNoteAction = (note) => ({
 export const startSaveNoteAction = (note) => {
   return async (dispatch, getState) => {
     try {
-      swal({
+      swal.fire({
         title: "Saving...",
         text: "We're saving your entry, hold on tight",
-        icon: Loader,
-        closeOnClickOutside: false,
-        buttons: false,
+        icon: "info",
+        allowOutsideClick: false,
+        showCancelButton: false,
+        showConfirmButton: false,
       });
       const { uid } = getState().auth;
       const buildNote = { ...note };
       delete buildNote.id;
       await db.doc(`/${uid}/journal/notes/${note.id}`).update(buildNote);
       dispatch(refreshNotes(note.id, buildNote));
-      swal("Saved", note.title, "success");
+      swal.fire("Saved", note.title, "success");
     } catch (error) {
       console.error(error);
-      swal("Error saving :(", error, "error");
+      swal.fire("Error saving :(", error, "error");
     }
   };
 };
@@ -93,12 +94,13 @@ export const closeNoteAction = () => ({
 export const startUploading = (file) => {
   return async (dispatch, getState) => {
     const { active: activeNote } = getState().notes;
-    swal({
+    swal.fire({
       title: "Uploading...",
       text: "We're uploading your image, hold on tight",
-      icon: Loader,
-      closeOnClickOutside: false,
-      buttons: false,
+      icon: "info",
+      allowOutsideClick: false,
+      showCancelButton: false,
+      showConfirmButton: false,
     });
 
     const url = await uploadFile(file);
@@ -112,19 +114,20 @@ export const startDeletingAction = (id) => {
   return async (dispatch, getState) => {
     try {
       const { uid } = getState().auth;
-      swal({
+      swal.fire({
         title: "Deleting...",
         text: "We're deleting your note, hold on tight",
-        icon: Loader,
-        closeOnClickOutside: false,
-        buttons: false,
+        icon: "info",
+        allowOutsideClick: false,
+        showCancelButton: false,
+        showConfirmButton: false,
       });
       await db.doc(`${uid}/journal/notes/${id}`).delete();
       dispatch(deleteNoteAction(id));
       swal.close();
     } catch (error) {
       console.error("Error: ", error);
-      swal("Error saving :(", error, "error");
+      swal.fire("Error saving :(", error, "error");
     }
   };
 };

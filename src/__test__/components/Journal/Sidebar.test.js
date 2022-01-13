@@ -60,7 +60,7 @@ describe("Sidebar - Component", () => {
   });
 
   test("should dispatch startCreateNewNote action", () => {
-    wrapper.find(".journal__new-entry").simulate("click");
+    wrapper.find(".journal__new-entry__add").simulate("click");
     expect(createNoteAction).toHaveBeenCalled();
   });
 });
