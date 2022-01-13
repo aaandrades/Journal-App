@@ -8,6 +8,7 @@ export const typesMock = {
   disableLoading: "[UI] Disable loading",
 
   notesAddNote: "[Notes] New note",
+  emptyNote: "[Notes] Empty Notes",
   noteCreated: "[Notes] Note created",
   noteActive: "[Notes] Note selected",
   notesLoad: "[Notes] Load notes",

@@ -1,23 +1,34 @@
+.notes__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary;
+}
+
 .notes__main-content {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  background-color: $white;
+  height: 95%;
+  width: 95%;
+  border-radius: 10px;
 }
 
 .notes__appbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: $primary;
-  color: $white;
-  padding: 10px 20px;
+  background-color: $white;
+  color: $primary;
+  border-radius: 10px;
+  padding: 20px 40px;
 }
 
 .notes__content {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 20px;
+  padding: 10px 40px 30px 40px;
 }
 .notes__title-input,
 .notes__textarea {
@@ -29,22 +40,27 @@
 
 .notes__title-input {
   color: $dark-grey;
+  border-radius: 8px;
+  border: 1px solid $light-grey;
+  padding: 20px;
   font-size: 25px;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
 .notes__textarea {
-  border: none;
+  border: 1px solid $light-grey;
+  padding: 20px;
   color: $dark-grey;
-  font-size: 20px;
+  font-size: 1.1rem;
   flex: 1 1 auto;
   resize: none;
+  margin: 10px 0px 20px 0px;
   border-radius: 8px;
 }
 
 .notes__image {
-  box-shadow: 5px 5px $dark-grey;
+  box-shadow: 3px 3px 8px 0px #b5b5b5;
   height: 150px;
   width: fit-content;
   width: -moz-fit-content;

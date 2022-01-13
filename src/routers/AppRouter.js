@@ -31,16 +31,14 @@ export const AppRouter = () => {
   return !checking ? (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="auth/*"
+        <Route path="auth/*"
           element={
             <PublicRoute isLoggedIn={isLoggedIn}>
               <AuthRouter />
             </PublicRoute>
           }
         />
-        <Route
-          path="/"
+        <Route path="/"
           element={
             <PrivateRoute isLoggedIn={isLoggedIn}>
               <JournalScreen />

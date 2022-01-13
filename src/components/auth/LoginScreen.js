@@ -2,15 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "../../Hooks/useForm";
 import { useDispatch, useSelector } from "react-redux";
-import { initLoginAction, startGoogleLoginAction } from "../../Redux/Actions/authActions";
+import {
+  initLoginAction,
+  startGoogleLoginAction,
+} from "../../Redux/Actions/authActions";
 import { LoginState } from "../../states/InitialStates";
 
 export const LoginScreen = () => {
   const dispatch = useDispatch();
-  const { loading } = useSelector(state => state.ui)
+  const { loading } = useSelector((state) => state.ui);
+
   const [values, handleInputChange] = useForm(LoginState);
   const { email, password } = values;
-  
+
   const handleLogin = (ev) => {
     ev.preventDefault();
     dispatch(initLoginAction(email, password));
@@ -21,56 +25,69 @@ export const LoginScreen = () => {
   };
 
   return (
-    <div className="animate__animated animate__fadeIn animate__faster">
-      <h3 className="mb-5">Login</h3>
+    <div className="animate__animated animate__fadeIn animate__faster login-container">
+      <div className="login-container__header">
+        <h3 className="login-container__header__title">Login</h3>
+        <label className="login-container__header__subheader">
+          Save your daily experiences and track your growth!
+        </label>
+      </div>
+      <button className="auth-google" onClick={() => handleGoogleLogin()}>
+        <img
+          className="google-icon"
+          src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+          alt="google button"
+        />
+        <b>Sign in with Google</b>
+      </button>
+      <div className="auth-separator">
+        <span>or Sign with Email</span>
+      </div>
       <form type="submit" onSubmit={handleLogin}>
         <div className="headers">
-          <input
-            type="email"
-            className="input-container"
-            placeholder="Email"
-            name="email"
-            autoComplete="new-password"
-            value={email}
-            onChange={handleInputChange}
-          />
-          <input
-            type="password"
-            className="input-container"
-            placeholder="Password"
-            name="password"
-            value={password}
-            onChange={handleInputChange}
-          />
+          <div className="textfield-container">
+            <label>
+              Email<b> *</b>
+            </label>
+            <input
+              type="email"
+              className="input-container"
+              placeholder="Email"
+              name="email"
+              autoComplete="new-password"
+              value={email}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="textfield-container">
+            <label>
+              Password<b> *</b>
+            </label>
+            <input
+              type="password"
+              className="input-container"
+              placeholder="Password"
+              name="password"
+              value={password}
+              onChange={handleInputChange}
+            />
+          </div>
           <button
             type="submit"
-            className="button btn pointer"
+            className="auth-btn pointer"
             disabled={loading}
             onClick={(e) => handleLogin(e)}
           >
-            Login
+            <b>Login</b>
           </button>
         </div>
-        <hr></hr>
         <div className="footers">
-          <div className="google-btn" onClick={() => handleGoogleLogin()}>
-            <div className="google-icon-wrapper">
-              <img
-                className="google-icon"
-                src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-                alt="google button"
-              />
-            </div>
-            <p className="btn-text">
-              <b>Login with Google</b>
-            </p>
-          </div>
-          <span className="paragraph">Or</span>
-          <span className="paragraph">
+          <label className="paragraph">
+            <span>Not registered yet?</span>
             <Link to="/auth/register" className="link">
-              Create new account
+              Create an Account
             </Link>
-          </span>
+          </label>
         </div>
       </form>
     </div>

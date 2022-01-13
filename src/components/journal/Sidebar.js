@@ -19,20 +19,19 @@ export const Sidebar = () => {
   return (
     <aside className="journal__sidebar">
       <div className="journal__sidebar-navbar">
-        <h3 className="mt-5">
-          <i className="far fa-moon"></i>
-          <span>{name}</span>
-        </h3>
-        <button className="btn" onClick={() => handleLogout()}>
-          Log out
-        </button>
+        <h3>Welcome, {name}!</h3>
       </div>
 
-      <div className="journal__new-entry" onClick={() => handleCreate()}>
-        <i className="far fa-calendar-plus fa-5x mt-5 pointer"></i>
-        <p className="mt-5 pointer">New entry</p>
+      <div className="journal__new-entry">
+        <div className="journal__new-entry__add" onClick={() => handleCreate()}>
+          <i className="far fa-calendar-plus fa-5x mt-5 pointer"></i>
+          <p className="pointer">New entry</p>
+        </div>
       </div>
       <JournalEntries />
+      <button className="logout-btn btn pointer" onClick={() => handleLogout()}>
+        Log out
+      </button>
     </aside>
   );
 };

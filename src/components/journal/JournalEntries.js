@@ -13,6 +13,7 @@ export const JournalEntries = () => {
 
   return (
     <div className="journal__entries">
+      <h3 className="journal__entries__text">Current Notes</h3>
       {notes.map((note) => (
         <JournalEntry key={note.id} {...note} handleClick={handleClick} />
       ))}

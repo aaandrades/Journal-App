@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RegisterScreen - Component should match to snapshot 1`] = `
+<div
+  className="animate__animated animate__fadeIn animate__faster register-container login-container"
+>
+  <div
+    className="login-container__header"
+  >
+    <h3
+      className="login-container__header__title"
+    >
+      Register
+    </h3>
+    <label
+      className="login-container__header__subheader"
+    >
+      Create a free acount to use the app!
+    </label>
+  </div>
+  <form
+    onSubmit={[Function]}
+    type="submit"
+  >
+    <div
+      className="headers"
+    >
+      <div
+        className="textfield-container"
+      >
+        <label>
+          Name
+          <b>
+             *
+          </b>
+        </label>
+        <input
+          autoComplete="new-password"
+          className="input-container"
+          name="name"
+          onChange={[Function]}
+          placeholder="Andrés Andrade"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        className="textfield-container"
+      >
+        <label>
+          Email
+          <b>
+             *
+          </b>
+        </label>
+        <input
+          autoComplete="new-password"
+          className="input-container"
+          name="email"
+          onChange={[Function]}
+          placeholder="aaandrades@mail.com"
+          type="email"
+          value=""
+        />
+      </div>
+      <div
+        className="textfield-container"
+      >
+        <label>
+          Password
+          <b>
+             *
+          </b>
+        </label>
+        <input
+          autoComplete="off"
+          className="input-container"
+          name="password"
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+      </div>
+      <div
+        className="textfield-container"
+      >
+        <label>
+          Confirm password
+          <b>
+             *
+          </b>
+        </label>
+        <input
+          className="input-container"
+          name="password2"
+          onChange={[Function]}
+          type="password"
+          value=""
+        />
+      </div>
+      <button
+        className="auth-btn pointer"
+        onClick={[Function]}
+        type="submit"
+      >
+        Register
+      </button>
+    </div>
+    <div
+      className="footers"
+    >
+      <label
+        className="paragraph"
+      >
+        <span>
+          Already registered ?
+        </span>
+        <a
+          className="link"
+          href="/auth/login"
+          onClick={[Function]}
+        >
+          Sign in
+        </a>
+      </label>
+    </div>
+  </form>
+</div>
+`;

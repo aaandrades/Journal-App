@@ -3,18 +3,21 @@
 }
 
 .journal__sidebar {
-  background-color: $dark-grey;
-  color: $white;
+  background-color: $white;
+  color: $primary;
   display: flex;
   flex-direction: column;
   height: 100vh;
   padding: 0px 10px;
   width: 450px;
+  z-index: 2;
+  -webkit-box-shadow: 4px 0px 9px -2px rgba(0, 0, 0, 0.25);
+  box-shadow: 4px 0px 9px -2px rgba(0, 0, 0, 0.25);
 }
 
 .journal__sidebar-navbar {
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .journal__sidebar-navbar h3 {
@@ -26,12 +29,13 @@
   display: flex;
   justify-content: center;
   margin-top: 5px;
-  width: 100%;
   flex-direction: column;
-  transition: color 300ms ease-out;
-  &:hover {
-    transition: color 300ms ease-in;
-    color: darken($color: white, $amount: 20);
+  &__add {
+    transition: color 300ms ease-out;
+    &:hover {
+      transition: color 300ms ease-in;
+      color: darken($color: white, $amount: 20);
+    }
   }
 }
 
@@ -39,20 +43,40 @@
   margin-top: 30px;
   flex: 1 1 auto;
   overflow-y: auto;
+  &__text {
+    margin-bottom: 20px;
+  }
 }
 
 .journal__entry {
-  background-color: $white;
+  background: #f69b31;
+  background: linear-gradient(90deg, #f69b31, #fdc130);
   border-radius: 4px;
-  color: $dark-grey;
+  color: $black;
   display: flex;
-  margin-bottom: 10px;
+  height: 100px;
+  margin-bottom: 15px;
   overflow: hidden;
+  -webkit-box-shadow: 3px 3px 6px 2px rgba(0, 0, 0, 0.19);
+  box-shadow: 3px 3px 6px 2px rgba(0, 0, 0, 0.19);
 }
 
-.journal__entry-picture {
-  height: 75px;
-  width: 75px;
+.journal__attach {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__text {
+    margin-left: 5px;
+    color: $white;
+  }
+}
+
+.journal__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
 
 .journal__entry-body {
@@ -62,17 +86,27 @@
   font-size: 14px;
   font-weight: bold;
 }
-.journal__entry-content {
-  font-size: 10px;
-}
 
 .journal__entry-date {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5px;
+  padding: 5px 0px 5px 15px;
+  font-weight: bold;
 }
 .journal__entry-date h4 {
   font-size: 11px;
+}
+
+.logout-btn {
+  background-color: $primary;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 10px 0px;
+  transition: margin-bottom 200ms;
+  &:hover {
+    margin-bottom: 15px;
+    transition: margin-bottom 200ms;
+  }
 }
