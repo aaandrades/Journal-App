@@ -22,9 +22,11 @@ export const Sidebar = () => {
         <h3>Welcome, {name}!</h3>
       </div>
 
-      <div className="journal__new-entry" onClick={() => handleCreate()}>
-        <i className="far fa-calendar-plus fa-5x mt-5 pointer"></i>
-        <p className="mt-5 pointer">New entry</p>
+      <div className="journal__new-entry">
+        <div className="journal__new-entry__add" onClick={() => handleCreate()}>
+          <i className="far fa-calendar-plus fa-5x mt-5 pointer"></i>
+          <p className="pointer">New entry</p>
+        </div>
       </div>
       <JournalEntries />
       <button className="logout-btn btn pointer" onClick={() => handleLogout()}>

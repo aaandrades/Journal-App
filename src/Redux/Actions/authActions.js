@@ -2,7 +2,7 @@ import { firebase, googleAuthProvider } from "../../firebase/firebase-config";
 import { types } from "../Types/types";
 import { disableLoadingAction, enableLoadingAction } from "./uiActions";
 import { cleanNotesAction } from "./notesActions";
-import swal from "sweetalert";
+import swal from "sweetalert2";
 
 // Login with email and password
 export const initLoginAction = (email, password) => {
@@ -16,7 +16,7 @@ export const initLoginAction = (email, password) => {
       dispatch(disableLoadingAction());
     } catch (error) {
       dispatch(disableLoadingAction());
-      swal("Login failed", "Email or Password are invalid!", "error");
+      swal.fire("Login failed", "Email or Password are invalid!", "error");
     }
   };
 };
@@ -35,7 +35,7 @@ export const initRegisterAction = (name, email, password) => {
         dispatch(loginAction(user.uid, user.displayName));
       })
       .catch((error) => {
-        swal("Register failed", error.message, "error");
+        swal.fire("Register failed", error.message, "error");
       });
   };
 };
@@ -50,7 +50,7 @@ export const startGoogleLoginAction = () => {
         dispatch(loginAction(user.uid, user.displayName));
       })
       .catch((error) => {
-        swal("Google Sign-in Failed!", error.message, "error");
+        swal.fire("Google Sign-in Failed!", error.message, "error");
       });
   };
 };
@@ -65,17 +65,18 @@ export const startLogout = () => {
   return async (dispatch) => {
     try {
       await firebase.auth().signOut();
-      swal({
+      swal.fire({
         title: "Closing session",
         text: "Wait for it, we're destroying information :)",
-        closeOnClickOutside: false,
-        buttons: false,
+        allowOutsideClick: false,
+        showCancelButton: false,
+        showConfirmButton: false,
       });
       dispatch(logoutAction());
       dispatch(cleanNotesAction());
       window.location.href = "/";
     } catch (error) {
-      swal(
+      swal.fire(
         "Logout Failed!",
         "An error occurred while logging out. Please try again. ",
         "error"
