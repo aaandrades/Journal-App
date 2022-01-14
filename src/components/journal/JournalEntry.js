@@ -24,8 +24,8 @@ export const JournalEntry = ({ id, title, body, date, url, handleClick }) => {
         <div></div>
         {url && (
           <span className="journal__attach">
-            <i className="fa-solid fa-paperclip "></i>{" "}
-            <span className="journal__attach__text">Attached Image</span>{" "}
+            <i className="fa-solid fa-paperclip "></i>
+            <span className="journal__attach__text">Attached Image</span>
           </span>
         )}
       </div>
