@@ -2,7 +2,7 @@
 
 exports[`Sidebar - Component should match to snapshot 1`] = `
 <aside
-  className="journal__sidebar"
+  className="journal__sidebar "
 >
   <div
     className="journal__sidebar-navbar"
