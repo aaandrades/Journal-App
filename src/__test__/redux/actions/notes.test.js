@@ -26,6 +26,7 @@ const initialStore = { auth: { uid: "Testing" } };
 const payload = {
   title: expect.any(String),
   body: expect.any(String),
+  url: expect.any(String),
   date: expect.any(Number),
   id: expect.any(String),
 };
@@ -62,7 +63,7 @@ describe("notes - Actions", () => {
 
     expect(actions[0]).toEqual({
       type: types.notesLoad,
-      payload: [payload, payload, payload],
+      payload: [payload, payload, payload, payload],
     });
   });
 
@@ -71,6 +72,7 @@ describe("notes - Actions", () => {
       id: "0p1uAKRhG2cshJx8euTR",
       title: "titulo",
       body: "body",
+      url: "url",
     };
     await store.dispatch(startSaveNoteAction(note)).then(() => {});
     const actions = store.getActions();
