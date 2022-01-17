@@ -16,7 +16,12 @@ export const createNoteAction = () => {
         showConfirmButton: false,
       });
       const { uid } = getState().auth;
-      const newNote = { title: "", body: "", date: new Date().getTime() };
+      const newNote = {
+        title: "",
+        body: "",
+        url: "",
+        date: new Date().getTime(),
+      };
       const doc = await db.collection(`${uid}/journal/notes`).add(newNote);
       swal.close();
       dispatch(activeNoteAction(doc.id, newNote));
@@ -127,7 +132,7 @@ export const startDeletingAction = (id) => {
       swal.close();
     } catch (error) {
       console.error("Error: ", error);
-      swal.fire("Error saving :(", error, "error");
+      swal.fire("Error deleting :(", error, "error");
     }
   };
 };

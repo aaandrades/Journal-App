@@ -77,7 +77,7 @@ export const RegisterScreen = () => {
               type="email"
               value={values.email}
               className="input-container"
-              placeholder="aaandrades@mail.com"
+              placeholder="new-email@mail.com"
               name="email"
               autoComplete="new-password"
               onChange={handleInputChange}

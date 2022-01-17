@@ -58,7 +58,7 @@ exports[`RegisterScreen - Component should match to snapshot 1`] = `
           className="input-container"
           name="email"
           onChange={[Function]}
-          placeholder="aaandrades@mail.com"
+          placeholder="new-email@mail.com"
           type="email"
           value=""
         />
