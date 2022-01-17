@@ -61,7 +61,7 @@ exports[`LoginScreen - Component should match to snapshot 1`] = `
           onChange={[Function]}
           placeholder="Email"
           type="email"
-          value="aaandrades@mail.com"
+          value="testaccount@test.com"
         />
       </div>
       <div

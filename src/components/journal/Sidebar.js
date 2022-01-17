@@ -40,7 +40,9 @@ export const Sidebar = () => {
             <p className="pointer">New entry</p>
           </div>
         </div>
-        <JournalEntries />
+        <JournalEntries
+          hideSidebar={query.matches ? setDisplayBar : undefined}
+        />
         <button
           className="logout-btn btn pointer"
           onClick={() => handleLogout()}

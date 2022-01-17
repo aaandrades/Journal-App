@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { activeNoteAction } from "../../Redux/Actions/notesActions";
 import { JournalEntry } from "./JournalEntry";
 
-export const JournalEntries = () => {
+export const JournalEntries = ({ hideSidebar = () => {} }) => {
   const { notes } = useSelector((state) => state.notes);
   const dispatch = useDispatch();
 
@@ -15,7 +15,12 @@ export const JournalEntries = () => {
     <div className="journal__entries">
       <h3 className="journal__entries__text">Current Notes</h3>
       {notes.map((note) => (
-        <JournalEntry key={note.id} {...note} handleClick={handleClick} />
+        <JournalEntry
+          key={note.id}
+          handleClick={handleClick}
+          hideSidebar={hideSidebar}
+          {...note}
+        />
       ))}
     </div>
   );

@@ -6,7 +6,7 @@ export const RegisterState = {
 };
 
 export const LoginState = {
-  email: "aaandrades@mail.com",
+  email: "testaccount@test.com",
   password: "123123",
 };
 
