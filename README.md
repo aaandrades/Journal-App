@@ -8,8 +8,6 @@
 Web application to collect and track a personal journal based on Firebase authentication with single-sign-on and email/password. You can create, read, edit, update and delete notes with title, body and images.
 
 <img src="src/assets/images/readme/main.png"  alt="Login screen" width="600" height="400" style=border-radius:6px>
-<img src="src/assets/images/readme/card.png"  alt="Notes screen" width="600" height="400" style=border-radius:6px>
-<img src="src/assets/images/readme/register.png"  alt="Register screen" width="600" height="400" style=border-radius:6px>
 
 ### :sparkles: Features
 - Single-sign-on with Google
@@ -42,6 +40,11 @@ Web application to collect and track a personal journal based on Firebase authen
 - Jest
 ### :hammer: Demostration
 You can enter directly to the link ```https://journal-project.netlify.app/```
+
+<img src="src/assets/images/readme/register.png"  alt="Register screen" width="600" height="400" style=border-radius:6px>
+
+<img src="src/assets/images/readme/card.png"  alt="Notes screen" width="600" height="400" style=border-radius:6px>
+
 ### :bulb: Run the App
 To run locally, clone the repo, execute ```npm install``` and then ```npm run start```.
 
