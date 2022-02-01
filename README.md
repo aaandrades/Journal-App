@@ -43,8 +43,6 @@ You can enter directly to the link ```https://journal-project.netlify.app/```
 
 <img src="src/assets/images/readme/register.png"  alt="Register screen" width="600" height="400" style=border-radius:6px>
 
-<img src="src/assets/images/readme/card.png"  alt="Notes screen" width="600" height="400" style=border-radius:6px>
-
 ### :bulb: Run the App
 To run locally, clone the repo, execute ```npm install``` and then ```npm run start```.
 
