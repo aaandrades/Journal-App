@@ -39,7 +39,7 @@ Web application to collect and track a personal journal based on Firebase authen
 - React-lottie
 - Jest
 ### :hammer: Demostration
-You can enter directly to the link ```https://journal-project.netlify.app/```
+You can enter directly to the link https://journal-project.netlify.app/
 
 <img src="src/assets/images/readme/register.png"  alt="Register screen" width="600" height="400" style=border-radius:6px>
 
