@@ -41,7 +41,7 @@ export const FabButtons = ({ note }) => {
       </div>
       <div className="fab-container">
         <button className="fab-button__btn" onClick={() => enableUpload()}>
-          <img src={UploadIcon} alt="Save" width={35} />
+          <img src={UploadIcon} alt="Save" width={30} />
         </button>
         <span className="fab-button__text">Upload</span>
       </div>
@@ -50,7 +50,7 @@ export const FabButtons = ({ note }) => {
           className="fab-button__btn delete-btn"
           onClick={() => handleDelete()}
         >
-          <img src={DeleteIcon} alt="Save" width={50} />
+          <img src={DeleteIcon} alt="Save" width={30} />
         </button>
         <span className="fab-button__text">Delete</span>
       </div>

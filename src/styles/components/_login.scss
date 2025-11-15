@@ -1,3 +1,5 @@
+@use "../base/settings" as *;
+
 .headers {
   display: flex;
   align-items: center;
@@ -49,7 +51,7 @@
 .auth-google {
   background-color: $white;
   border: 1px solid $soft-gray;
-  border-radius: 30px;
+  border-radius: 10px;
   padding: 10px;
   display: flex;
   justify-content: center;
@@ -66,6 +68,7 @@
 
   .google-icon {
     margin: 0px 5px;
+    width: 20px;
   }
 }
 
@@ -93,7 +96,8 @@
   padding: 15px 8px;
   border-radius: 10px;
   outline-color: $primary;
-  width: calc(100% - 15px);
+  width: 100%;
+
   &:hover {
     border: 1px solid $primary-hover;
   }
@@ -126,8 +130,12 @@
   width: calc(100%);
   transition: background 200ms ease-in;
   letter-spacing: 1px;
+  font-size: 16px;
+  height: 49px;;
+
   &:hover {
-    box-shadow: 0 0px 2px $primary;
+    background-color: $primary-hover;
+    transition: background 200ms ease-out;
   }
 }
 

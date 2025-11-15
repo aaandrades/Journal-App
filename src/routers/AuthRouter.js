@@ -21,9 +21,10 @@ export const AuthRouter = () => {
   return (
     <div className="auth__main">
       <div className="auth__box-announcement">
+        <span className="auth__box-announcement__bio">Made with ❤️ by Andres</span>
         <span className="auth__box-announcement__title">
-          Write in your Diary
-          <br /> not in your Hand
+          Write in your Journal,
+          <br /> not in your hand
         </span>
         <div
           className="auth__box-announcement__lottie"

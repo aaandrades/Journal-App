@@ -16,7 +16,7 @@ export const initLoginAction = (email, password) => {
       dispatch(disableLoadingAction());
     } catch (error) {
       dispatch(disableLoadingAction());
-      swal.fire("Login failed", "Email or Password are invalid!", "error");
+      swal.fire("Login failed", "Email or password are invalid", "error");
     }
   };
 };

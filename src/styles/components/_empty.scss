@@ -1,3 +1,5 @@
+@use "../base/settings" as *;
+
 .empty__main-content {
   align-items: center;
   background-color: $primary;

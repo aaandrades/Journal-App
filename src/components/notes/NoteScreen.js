@@ -17,7 +17,7 @@ export const NoteScreen = () => {
   }, [values, dispatch]);
 
   return (
-    <div className="notes__main-content animate__animated animate__fadeIn">
+    <div className="notes__main-content animate__animated animate__fadeIn animate__faster">
       <NotesAppBar note={values} />
       <div className="notes__content">
         <input

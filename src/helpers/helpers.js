@@ -6,10 +6,15 @@ export const dateOrdinal = (dom) => {
 };
 
 export const formatDate = (date) => {
-  return new Date(date).toLocaleString("en-US", {
-    month: "long",
-    day: "2-digit",
-    year: "numeric",
-    hour: "2-digit",
-  });
+  const dateObj = new Date(date);
+  const month = dateObj.toLocaleString("en-US", { month: "long" });
+  const day = dateObj.getDate();
+  const year = dateObj.getFullYear();
+  const time = dateObj.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  }).toLowerCase();
+
+  return `${month} ${dateOrdinal(day)}, ${year} at ${time}`;
 };

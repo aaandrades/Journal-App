@@ -10,34 +10,32 @@ export const JournalEntry = ({
   handleClick,
   hideSidebar,
 }) => {
-  const getMonth = new Date(date).toLocaleString("en-US", {
-    weekday: "long",
-  });
+  const dateObj = new Date(date);
+  const month = dateObj.toLocaleString("en-US", { month: "long" });
+  const day = dateObj.getDate();
+  const year = dateObj.getFullYear();
+  const formattedDate = `${month} ${dateOrdinal(day)}, ${year}`;
 
-  const getDay = new Date(date).getDate();
-
+  console.log("body: ", body);
   return (
     <div
-      className="journal__entry pointer animate__animated animate__backInLeft animate__faster"
+      className="journal__entry pointer"
       onClick={() => {
         hideSidebar(true);
         handleClick(id, { title, body, date, id, url });
       }}
     >
-      <div className="journal__entry-date">
-        <span>{getMonth}</span>
-        <h4>{dateOrdinal(getDay)}</h4>
-      </div>
+      <h2 className="journal__entry-header">
+        <span className="journal__entry-title">{title || "(No title)"}</span>
+        <span className="journal__entry-date">{formattedDate}</span>
+      </h2>
       <div className="journal__container">
-        <div className="journal__entry-body">
-          <p className="journal__entry-title">{title || "(No title)"}</p>
-        </div>
-        <div></div>
+        <div className="journal__entry-body">{body}</div>
         {url && (
-          <span className="journal__attach">
+          <div className="journal__attach">
             <i className="fa-solid fa-paperclip "></i>
-            <span className="journal__attach__text">Attached Image</span>
-          </span>
+            <span className="journal__attach__text">Attachments</span>
+          </div>
         )}
       </div>
     </div>

@@ -1,7 +1,10 @@
+@use "../base/settings" as *;
+
 .fab-button {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+
   &__btn {
     border-radius: 50%;
     border: none;
@@ -9,6 +12,7 @@
     height: 50px;
     cursor: pointer;
   }
+
   &__text {
     color: $primary;
     font-size: 0.8rem;
@@ -21,13 +25,14 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-left: 15px;
+  margin-left: 20px;
   cursor: pointer;
   transform: scale3d(1, 1, 1);
   transition: all 0.3s ease;
+
   &:hover {
-    transform: scale3d(1.2, 1.2, 1.2);
-    transition: all 0.3s ease;
+    filter: brightness(0.9);
+    transition: filter 0.2s ease-in-out;
   }
 }
 
@@ -37,25 +42,4 @@
 
 .delete-btn {
   padding: 0px;
-}
-
-@keyframes shake {
-  10%,
-  90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  20%,
-  80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%,
-  50%,
-  70% {
-    transform: translate3d(-2px, 0, 0);
-  }
-  40%,
-  60% {
-    transform: translate3d(2px, 0, 0);
-  }
 }
