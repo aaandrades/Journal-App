@@ -14,7 +14,7 @@ export const NotesAppBar = ({ note }) => {
   return (
     <div className="notes__appbar">
       <span>{formatDate(note.date)}</span>
-      <div>
+      <button className="notes__appBar-close" title="Close note">
         <img
           src={close}
           alt="close"
@@ -22,7 +22,7 @@ export const NotesAppBar = ({ note }) => {
           onClick={() => returnMain()}
           className="pointer"
         />
-      </div>
+      </button>
     </div>
   );
 };

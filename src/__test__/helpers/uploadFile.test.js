@@ -2,9 +2,9 @@ import { uploadFile } from "../../helpers/uploadFile";
 import cloudinary from "cloudinary";
 
 cloudinary.config({
-  cloud_name: process.env.REACT_APP_CLOUDINARY_NAME,
-  api_key: process.env.REACT_APP_CLOUDINARY_API,
-  api_secret: process.env.REACT_APP_CLOUDINARY_SECRET,
+  cloud_name: import.meta.env.VITE_CLOUDINARY_NAME,
+  api_key: import.meta.env.VITE_CLOUDINARY_API,
+  api_secret: import.meta.env.VITE_CLOUDINARY_SECRET,
 });
 
 describe("UploadFile - Helper", () => {

@@ -1,12 +1,12 @@
-@import "./base/settings";
-@import "./base/base";
-@import "./base/buttons";
+@use "./base/settings" as *;
+@use "./base/base" as *;
+@use "./base/buttons" as *;
 
-@import "./components/auth";
-@import "./components/login";
-@import "./components/register";
-@import "./components/links";
-@import "./components/journal";
-@import "./components/empty";
-@import "./components/notes";
-@import "./components/fab-button";
+@use "./components/auth" as *;
+@use "./components/login" as *;
+@use "./components/register" as *;
+@use "./components/links" as *;
+@use "./components/journal" as *;
+@use "./components/empty" as *;
+@use "./components/notes" as *;
+@use "./components/fab-button" as *;

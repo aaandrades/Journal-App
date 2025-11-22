@@ -9,7 +9,7 @@ import { uiReducer } from "../Reducers/uiReducer";
  * Use redux devtools with Redux-thunk to async actions
  */
 const composeEnhancers =
-  (process.env.NODE_ENV === "development" &&
+  (import.meta.env.DEV &&
     typeof window !== "undefined" &&
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
   compose;

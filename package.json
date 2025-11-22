@@ -3,30 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@babel/runtime": "^7.16.5",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "firebase": "^9.6.0",
     "lottie-web": "^5.8.1",
-    "node-sass": "^6.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.0.2",
-    "react-scripts": "4.0.3",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.0",
     "sweetalert2": "^11.3.4",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test:watch": "react-scripts test --testURL=http://localhost:4000",
-    "test": "react-scripts test --watchAll=false --testURL=http://localhost",
-    "test:coverage": "npm run test -- --watchAll=false --coverage . --testURL=http://localhost:4000",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test:watch": "vitest",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "eslintConfig": {
     "extends": [
@@ -47,13 +45,17 @@
     ]
   },
   "devDependencies": {
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
     "cloudinary": "^1.27.1",
     "enzyme": "^3.11.0",
     "enzyme-to-json": "^3.6.2",
-    "jest-canvas-mock": "^2.3.1",
     "jsdom": "19.0.0",
     "jsdom-global": "3.0.2",
-    "redux-mock-store": "^1.5.4"
+    "redux-mock-store": "^1.5.4",
+    "sass": "^1.94.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.2"
   }
 }

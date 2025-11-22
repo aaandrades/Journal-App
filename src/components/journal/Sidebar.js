@@ -30,20 +30,18 @@ export const Sidebar = () => {
         <div className="journal__sidebar-navbar">
           <h3>Welcome, {name}!</h3>
         </div>
-
-        <div className="journal__new-entry">
-          <div
-            className="journal__new-entry__add"
-            onClick={() => handleCreate()}
-          >
-            <i className="far fa-calendar-plus fa-5x mt-5 pointer"></i>
-            <p className="pointer">New entry</p>
-          </div>
-        </div>
         <JournalEntries
           hideSidebar={query.matches ? setDisplayBar : undefined}
         />
         <button
+          className="logout-btn-secondary btn pointer"
+          onClick={handleCreate}
+          type="button"
+        >
+          Create new entry
+        </button>
+        <button
+          type="button"
           className="logout-btn btn pointer"
           onClick={() => handleLogout()}
         >

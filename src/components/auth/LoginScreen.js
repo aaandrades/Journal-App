@@ -33,11 +33,7 @@ export const LoginScreen = () => {
         </label>
       </div>
       <button className="auth-google" onClick={() => handleGoogleLogin()}>
-        <img
-          className="google-icon"
-          src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-          alt="google button"
-        />
+        <img className="google-icon" src="/google.webp" alt="google button" />
         <b>Sign in with Google</b>
       </button>
       <div className="auth-separator">
@@ -78,7 +74,7 @@ export const LoginScreen = () => {
             disabled={loading}
             onClick={(e) => handleLogin(e)}
           >
-            <b>Login</b>
+            Login
           </button>
         </div>
         <div className="footers">
